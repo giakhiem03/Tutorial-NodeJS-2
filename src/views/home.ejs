@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/index.css">
-</head>
-<body>
-    <h1>Hello world</h1>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="/">Home</a>
+            <a href="/create-user">News</a>
+        </div>
+        <table>
+            <caption>Bảng Thông Tin</caption>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Tên</th>
+                <th>Email</th>
+                <th>Thành phố</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% users.forEach((user, index) => {%>
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><%= user.name %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.city %></td>
+                        <td>
+                            <a href="/update/<%= user.id %>">Edit</a>
+                            <a href="/delete-user/<%= user.id %>">Delete</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+          </table>
+        
+    </body>
 </html>
+
