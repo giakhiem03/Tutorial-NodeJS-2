@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
 
     // By default, multer removes file extensions so let's add them back
     filename: function(req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+        cb(null, path.basename(file.originalname, path.extname(file.originalname)) + '-' + Date.now() + path.extname(file.originalname));
     }
 });
 
@@ -31,6 +31,7 @@ const upload = multer({ storage: storage, fileFilter: imageFilter })
 
 router.get('/upload', HomeController.uploadPage)
 router.post('/upload-profile-pic', upload.single('profile_pic'), HomeController.handleUploadFile)
+router.post('/upload-profile-pic-multi', upload.array('multiple_images'), HomeController.handleUploadMultiFile)
 router.post('/update-user', HomeController.updateUserFromClient)
 router.get('/delete-user/:id', HomeController.deleteUserFromClient)
 router.post('/delete-user', HomeController.deleteUser)
