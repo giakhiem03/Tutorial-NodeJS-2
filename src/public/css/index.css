@@ -89,3 +89,12 @@ caption {
   margin-bottom: 20px;
   color: #333;
 }
+
+.upload-file-container {
+    padding: 15px;
+    display: block;
+}
+
+.btn-save {
+    padding: 15px;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
+    <body>
+        <div class="topnav">
+            <a  href="/">Home</a>
+            <a href="/create-user">News</a>
+            <a href="/upload" class="active">Upload file</a>
+        </div>
+        <div class="">
+            <form action="/upload-profile-pic" method="post" enctype="multipart/form-data" >
+                <div>
+                    <label for="">Avatar: </label>
+                    <input name="profile_pic" class="upload-file-container" type="file" />
+                </div>
+                <div class="">
+                    <button class="btn-save" type="submit">save file</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
+
